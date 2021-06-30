@@ -102,11 +102,38 @@ def ex7() :
     roeg = abs(g - 9.8) / 9.8 * 100
     print('오차율(g) :',roeg)
 
+#실험8
+def ex8() :   
+    while 1:
+        print('종료는 exit')
+        m = input("질량 : ")
+        if m == 'exit':
+            print('종료')
+            break
+        k = input("용수철 상수 : ")
+        if k == 'exit':
+            print('종료')
+            break
+
+        m = float(m); k = float(k)
+        T = 2 * pi * sqrt(m / k)
+
+        print("주기 : %.2f\n" %T)
+
+#실험11
+def ex11() :
+    print('M구하기')
+    str1 = input('m1, m2, t1, t2, t3:')
+    m1, m2, t1, t2, t3 = str1.split()
+    m1 = int(m1); m2 = int(m2); t1 = int(t1); t2 = int(t2); t3 = int(t3)
+    M = (m1*(t3 - t1) - m2 *(t2 - t3))/(t2 - t3)
+    print(M)
+
 
 #메인
 print("종료 : exit")    
 while 1:
-    func = input("\n기능 선택(평균, 오차율, 실험3, 실험6, 실험7) :")
+    func = input("\n기능 선택(평균, 오차율, 실험3, 6, 7, 8, 11) :")
     if func == 'exit' :
         break
     elif func == "평균" :
@@ -119,6 +146,10 @@ while 1:
         ex6()
     elif func == '실험7' :
         ex7()
+    elif func == '실험8' :
+        ex8()
+    elif func == '실험11' :
+        ex11()
     else :
         print("없는 기능입니다.")
 
